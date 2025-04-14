@@ -1,35 +1,38 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ficha REMOB - MORHAN</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <h1>Ficha de Inscrição - REMOB / MORHAN</h1>
-  <form id="form-remob">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ficha REMOB - MORHAN</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Ficha de Inscrição - REMOB / MORHAN</h1>
+    <form id="form-remob">
+      <label for="data_filiacao">Data de Filiação:</label>
+      <input
+        type="date"
+        id="data_filiacao"
+        name="data_filiacao"
+        lang="pt-BR"
+        required
+      />
 
+      <label for="nome">Nome completo:</label>
+      <input type="text" id="nome" name="nome" required />
 
-    <label for="data_filiacao">Data de Filiação:</label>
-    <input type="date" id="data_filiacao" name="data_filiacao" lang="pt-BR" required />
-    
-    <label for="nome">Nome completo:</label>
-    <input type="text" id="nome" name="nome" required />
+      <label for="cep">CEP:</label>
+      <input type="text" id="cep" name="cep" required />
 
-    <label for="cep">CEP:</label>
-    <input type="text" id="cep" name="cep" required />
+      <label for="estado">Estado:</label>
+      <input type="text" id="estado" name="estado" readonly />
 
-    <label for="estado">Estado:</label>
-    <input type="text" id="estado" name="estado" readonly />
+      <label for="municipio">Município:</label>
+      <input type="text" id="municipio" name="municipio" readonly />
 
-    <label for="municipio">Município:</label>
-    <input type="text" id="municipio" name="municipio" readonly />
+      <button type="submit">Enviar</button>
+    </form>
 
-    <button type="submit">Enviar</button>
-  </form>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
