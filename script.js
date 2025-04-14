@@ -25,7 +25,7 @@ function formatarDataBR(dataISO) {
   return `${dia}/${mes}/${ano}`;
 }
 
-// Envia o formulário pro Google Sheets
+// Envia o formulário pro Google Sheets (modo silencioso, no-cors)
 document
   .getElementById("form-remob")
   .addEventListener("submit", async function (e) {
@@ -43,10 +43,11 @@ document
     };
 
     try {
-      const response = await fetch(
+      await fetch(
         "https://script.google.com/macros/s/AKfycbzWPlBGQx0zoJHAjZ6uY7T5-QstGp7qRPn_CZCWwbtdY1oNwqNnoZzVXIyVcwF0gQb4yQ/exec",
         {
           method: "POST",
+          mode: "no-cors",
           body: JSON.stringify(formData),
           headers: {
             "Content-Type": "application/json",
@@ -54,9 +55,8 @@ document
         }
       );
 
-      const result = await response.json();
-      alert("✅ Sucesso: " + result.mensagem);
+      alert("✅ Dados enviados! Verifique a planilha.");
     } catch (err) {
-      alert("❌ Erro ao enviar dados: " + err.message);
+      alert("❌ Erro ao tentar enviar: " + err.message);
     }
   });
